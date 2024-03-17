@@ -1,0 +1,37 @@
+calculation:-
+
+def add(x,y):
+   return x+y
+
+def divide(p,q):
+   return p/q
+
+
+text calculation:-
+import pytest
+import calculations
+
+def test_add():
+   result = calculations.add(5,6)
+   assert result==11
+   
+def test_divide():
+   result = calculations.divide(10,2)
+   assert result==5
+
+
+
+string opeartion:-
+def count_characters(demo_string,to_count):
+   count = demo_string.count(to_count)
+   return count
+
+text string operation:-
+import pytest 
+import string_operations
+
+def test_count_characters():
+   name="zoozoo"
+   to_count="z"
+   result = string_operations.count_characters(name,to_count)
+   assert result==2

@@ -1,0 +1,97 @@
+single:-
+class Parent:
+   money = 60000
+   bike = "suzuki" 
+   def diabetes(self):
+      print("i have diabetes")
+   
+class Child(Parent):
+   pass
+
+c = Child()
+print(c.money)
+print(c.bike)
+c.diabetes()
+
+
+multilevel:-
+class GrandParent:
+   zamin = "200 acre"
+   gold = "20 kg"
+
+class Parent(GrandParent):
+   money = 60000
+   bike = "suzuki" 
+   def diabetes(self):
+      print("i have diabetes")
+   
+class Child(Parent):
+   pass
+
+c  = Child()
+print(c.zamin)
+print(c.money)
+
+multiple:-
+class Parent1:
+   def p1m(self):
+      print("hello I am method of parent 1")
+      
+   def hello(self):
+      print("hello from parent 1")
+      
+class Parent2:
+   def p2m(self):
+      print("hello I am method of parent 2")
+      
+   def hello(self):
+      print("hello from parent 2")
+      
+class Child(Parent2,Parent1):
+   pass
+
+c = Child()
+c.p1m()
+c.p2m()
+c.hello() #here hello() method will be called from Parent2 class. because on line number 15 we have mentioned Parent2 first
+
+heirarchical:-
+class Parent:
+   x = 10 
+   def display(self, name):
+      print("Hello ", name)
+      
+class Child1(Parent):
+   pass
+
+class Child2(Parent):
+   pass
+
+c1 = Child1()
+print(c1.x)
+c1.display("Child 1")
+
+c2 = Child2()
+print(c2.x)
+c2.display("Child 2")
+
+hybrid:-
+class Parent:
+   x = 10 
+   def display(self, name):
+      print("Hello ", name)
+      
+class Child1(Parent):
+   def greeting(self):
+      print("Hello from Child 1")
+
+class Child2(Parent):
+   pass
+
+class Child(Child1):
+   pass
+
+c = Child()
+print(c.x)
+c.display("I am grand child")
+c.greeting()

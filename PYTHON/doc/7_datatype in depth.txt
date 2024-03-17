@@ -1,0 +1,821 @@
+Data type:-
+
+STRING:-
+
+#Introduction
+# -> collection of characters inside single,double or triple quotes
+a = 'x'
+b = "hello"
+#c = "gfivivoyfwipvytvwe
+#     sdgsdgsdgsdg"  ERROR
+# we cant write multi line string in double quotes so we have triple quotes
+
+d = ''' Hello
+       I am Python multi line string'''
+       
+e = """Hello
+       I am Python multi line string"""
+       
+print(type(a))
+print(type(b))
+print(type(d))
+print(type(e))
+
+#importnat 
+#f = "Hello python' ERROR
+#string must start and end with same quotes
+#g = "My name is "Tejas" "
+
+
+g = "My name is 'Tejas' " #My name is 'Tejas'
+f = 'My name is "Tejas" '
+print(g)
+print(f)
+
+h = " python 121* %$@!8~f"
+print(type(h))
+
+# Accessing String elements/characters
+
+# index -> position of character in a string
+# index has two types -> positive and negative
+# positive index -> starts from zero (Left to Right)
+# negative index -> starts from -1 (Right to Left)
+s="python"
+
+#  0   1   2   3   4   5
+#  p   y   t   h   o   n
+# -6  -5  -4  -3  -2  -1
+print(s[0])
+print(s[-6])
+#print(s[8]) #IndexError: string index out of range
+#print(s[-10]) #IndexError: string index out of range
+
+#Slice -> subpart/substring
+#variable[start : end : step]
+s = "python"
+
+#py,pyh,p,pytho.... -> starts from zeroth index -> s[0:2] -> s[:2] -> py
+#on,thon,n......... -> ends on last index       -> s[4:6] -> s[4:] -> on
+#th,tho,yt......... -> middle index             -> s[2:4] -> s[2:4] ->th
+
+#Advanced slicing
+print("------ Advanced slicing -----------")
+#1. working with step value
+s="python"
+
+#  0   1   2   3   4   5
+#  p   y   t   h   o   n
+# -6  -5  -4  -3  -2  -1
+
+print(s[0:6:2])
+# step value = to be skip + 1 
+# skip = step value -1
+
+# step 1 - check sign of step value -> +ve -> slicing is from L to R
+# step 2 - starts with 0th index (for above example)
+# step 3 - our step value (for above example) is 2 so we have to skip 1 elemet/character
+# output -> 0->p      2->t     4->0
+
+s = "maharashtra"
+print(s[2:8:2])
+print(s[2:-4:2])
+print(s[-5:1:3])
+print(s[6:1:-1])
+print(s[::-1])
+
+#Operators on string
+print("---- Operators on string ------")
+print("hello" + "bye")
+print("hello" * 3)
+
+print("z" in "zebra")
+print("x" not in "zebra")
+
+print("rajesh" > "raju") # 'e' > 'u'   --> character by character comparision (ASCII value)
+print('a' > 'A')  #a ASSCII value -> 97 and A ASCII value 65
+ 
+#operations on string
+print(" ------  operations on string ---------------")
+#changing case
+s = "hello"
+print("hello".upper())
+print(s.upper())
+print("HEllo".lower())
+print("HELLO45".lower()) #no error -> only alphabates converted
+print("tejas kasare".title())
+print("HELlo".swapcase())
+print("mango is seasonal fruit.apple is good.".capitalize())
+
+#index of character
+s= "python python"
+print(s.index('p')) #first occurance
+print(s.rindex('p')) #last occuarance
+#print(s.index('z')) #Error
+print(s.find('p'))
+print(s.rfind('p'))
+print(s.find('z'))  #-1 no error
+
+#checking string content
+print("---- checking string content-------")
+print("pythonPython".isalpha())
+print("python Python".isalpha())
+print("pythonPython45".isalpha())
+
+print("Hello45".isalnum())
+print("Hello 45".isalnum())
+
+print("hello".islower())
+print("Hello".isupper())
+print("HELLO".isupper())
+
+print("454556".isdigit())
+
+#counting characters in string
+print("hello".count("l"))
+print("hello".count("z"))
+print(len("hello"))
+
+#split and join
+date = "8-11-2023"
+splited_date=date.split("-") #Return a list of the substrings in the string, using sep as the separator string.
+print(date)
+print(splited_date)
+
+joined_date="/".join(splited_date) #Concatenate any number of strings.
+print(joined_date)
+
+print(ord('a')) # to check ascii value
+
+#checking start and end of a string
+s = "python"
+print(s.startswith("p"))
+print(s.startswith("py"))
+print(s.startswith("y"))
+
+print(s.endswith("on"))
+
+#replacing string character(s)
+s="python"
+s="pythom"
+print("python".replace("n","m"))
+name="raj"
+replaced_name=name.replace("r","b")
+print(name)
+print(replaced_name)
+
+#removing space
+s1 = "        python"
+print(s1)
+print(s1.lstrip())
+
+s2 = "python           "
+print(len(s2))
+print(len(s2.rstrip()))
+
+s3 = "    python     "
+print(s3)
+print(s3.strip())
+
+#loop on string
+s="python"
+
+for char in s:
+       print(char)
+       #print(char,end=" - ")
+
+#find total vowels in given string -> a,e,i,o,u
+s="hello"
+#expected output -> 2
+count = 0
+for char in s:
+       if(char in "aeiou"):
+              count+=1
+       else:
+              pass
+print(count)
+
+#print total upper case characters in given string
+s = "HELLopython"
+#expected output -> 4
+count = 0
+for char in s:
+       if(char.isupper()):
+              count+=1
+       else:
+              pass
+print(count)
+
+#find occurance of each character
+s = "honululu"
+#h-1
+#o-1
+#n-1
+#u-3
+#l-2
+
+
+#more string function
+s="python"
+
+
+LIST:-
+
+#lis example 
+data = [10,"hi",5.3,10]
+# ---------------- list properties -----------------
+# duplicate allowed
+# hetrogeneous
+# in []
+# mutable
+# indexing
+# insertaion order preserved
+
+# ---------------- how to crerate a list -----------------
+# empty list
+list1 = []
+print(list1)
+print(type(list1))
+
+#if we know emelents
+list2 = [10,20,30]
+print(list2)
+print(type(list2))
+
+#form string to list using list(variable) function
+s1="hello"
+list3 = list(s1)
+print(list3)
+print(type(list3))
+
+#from split() to list
+s2="9-11-2023"
+list4 = s2.split("-")
+print(list4)
+print(type(list4))
+
+#from range() to list()
+list5 = list(range(1,6))
+print(list5)
+print(type(list5))
+
+
+#operators on list
+list5 = [1,2,3]
+list6 = [11,22,33]
+
+list7 = list5+list6
+print(list7) #[1, 2, 3, 11, 22, 33] 
+
+print(list5*3) #[1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+print(10 in list5)
+print(10 not in list5)
+
+#accessing list elements
+#either by using indexing or slicing
+print("------accessing list elements--------")
+list8 = [44,55,66,77,88,99]
+print(list8[0])
+print(list8[-1])
+#print(list8[12]) list index out of range
+
+print(list8[0:3], list8[:3]) #[44,55,66]
+print(list8[4:6], list8[4:]) #[88,99]
+print(list8[0:5:2])
+
+#operations on list
+#Basic
+print("----operations on list-----")
+list9 = [33,44,55,66,44]
+print(len(list9))
+print(list9.count(44))
+print(list9.index(33))
+print(list9.index(44))
+#print(list9.index(444)) ERROR
+#print(list9.rindex(44)) there is no rindex on list. it is only available for string
+
+#Adding elemets in list
+print("----- Adding elemets in list ----")
+list10 = [1,2,3,4,5]
+list11 = [11,22,33,44,55]
+
+print(list10) #[1, 2, 3, 4, 5]
+list10[0]=100
+print(list10) #[100, 2, 3, 4, 5] data loss, sicnce 1 is not present
+
+list10.append(9) #append -> add elemet at the end
+print(list10)
+
+list10.insert(0,1) #insert -> add elemet at the given index
+print(list10)
+
+list10.insert(50,8)  #if we try to add element at index larger than max index of given list, then element will be added at the end
+print(list10)
+print(list10.index(8))
+
+list10.insert(-1,88)  #if we try to add element at index larger than max index of given list, then element will be added at the end
+print(list10)
+
+list10.extend(list10) #add other collection (string,list,tuple,set..etc) into given list at the end
+print(list10)
+
+list10.extend("hi")
+print(list10)
+
+#removing elemets from list
+print("----- removing elemets from list ----")
+list12 = [11,22,33,44,55,66,77,88]
+print(list12)
+del list12[0]
+print(list12)
+#del list12[10] ERROR due to index
+
+list12.remove(22) #remove -> delete given element from list
+print(list12)
+#list12.remove(222) #ERROR coz, 222 is not in list
+
+list12.pop() # pop() -> removes last elemet from list
+print(list12)
+
+# [].pop() #IndexError: pop from empty list . we cant pop elemet from empty list
+print(list12)
+list12.pop(2) # pop(index) -> removes  elemet from list at given index
+print(list12)
+
+list12.clear()  #removes all elemets 
+print(list12)
+
+#reverse and sort
+print("------ reverse and sort ------------")
+list13 = [44,66,11,33,22]
+print(list13)
+list13.reverse()
+print(list13)
+list13.sort()
+print(list13)
+list13.sort(reverse=True)
+print(list13)
+
+#list comprehension -> creating a list. shortcut to create a list
+print("---- list comprehension----------")
+data = [1,2,4,3,7,8]
+
+# find even numbers in given list
+# solution 1-> without using list comp
+
+even_nos =[]
+for num in data:
+   if num%2==0:
+      even_nos.append(num)
+
+print(data)
+print(even_nos)
+
+# solution 2-> with list comp
+even_data = [ num  for num in data if(num%2==0)]
+print(even_data)
+
+# add 5 in each element in given list - data using list comp
+adding_five = [num+5  for num in data]
+print(adding_five)
+
+#multi dimensional list --> list in list
+data = [10,20,[11,22,33],30,40]
+print(data[1])
+print(data[2])
+print(data[2][1])
+
+
+
+TUPLE:-
+
+#tuple example 
+data = (10,"hi",5.3,10)
+# ---------------- tuple properties -----------------
+# duplicate allowed
+# hetrogeneous
+# in ()
+# immutable
+# indexing
+# insertaion order not preserved (since tuple is immutable,we cant add elements in it)
+
+# ---------------- how to crerate a tuple -----------------
+# empty tuple
+tuple1 = ()
+print(tuple1)
+print(type(tuple1))
+
+#tuple with only one element
+#tuple2 = (12.23) --> this tuple is not valid. if we check type then we eill get float becuase o 12.23
+tuple2 = (12.23,)
+print(tuple2)
+print(type(tuple2))
+
+
+#if we know emelents
+tuple3 = (10,20,30)
+print(tuple3)
+print(type(tuple3))
+
+tuple4 = 100,200,300
+print(tuple4)
+print(type(tuple4))
+
+
+
+#form string to tuple using tuple(variable) function
+s1="hello"
+tuple5 = tuple(s1)
+print(tuple5)
+print(type(tuple5))
+
+#form list to tuple using tuple(variable) function
+mylist = [11,22,33]
+print(mylist)
+tuple6 = tuple(mylist)
+print(tuple6)
+print(type(tuple6))
+
+#from range() to tuple()
+tuple7 = tuple(range(1,6))
+print(tuple7)
+print(type(tuple7))
+
+
+#operators on tuple
+tuple8 = (1,2,3)
+tuple9 = (11,22,33)
+
+tuple10 = tuple8+tuple9
+print(tuple10) #(1, 2, 3, 11, 22, 33)
+print(tuple8)
+
+print(tuple8*3) #(1, 2, 3, 1, 2, 3, 1, 2, 3)
+print(tuple8)
+
+print(10 in tuple8)
+print(10 not in tuple8)
+
+#accessing tuple elements
+#either by using indexing or slicing
+print("------accessing tuple elements--------")
+tuple11 = (44,55,66,77,88,99)
+print(tuple11[0])
+print(tuple11[-1])
+#print(tuple11[12]) #tuple index out of range
+
+print(tuple11[0:3], tuple11[:3]) #[44,55,66]
+print(tuple11[4:6], tuple11[4:]) #[88,99]
+print(tuple11[0:5:2])
+
+#operation on tuple
+
+l1 = [10,20,30]
+l1.append(40)
+print(l1)
+
+t1 = (100,200,300,100)
+#t1.append(400) error
+# we cant add or remove elemets from TUPLE
+
+print(len(t1))
+print(t1.index(100))
+#print(t1.index(500))
+print(t1.count(100))
+print(sorted(t1))
+print(sorted(t1,reverse=True))
+print("min :",min(t1))
+print("max :",max(t1))
+print(min(("rajaaaaaaaaaaa","raju","z")))
+print(max(("raj","raju","z")))
+#print(max(("raj","raju",12,0)))  ERROR
+
+
+
+
+# packing and unpacking of tuple
+
+t1=10,20,30 #packing of tuple
+print(t1)
+
+a,b,c = t1  #UNPACKING OF TUPLE --> a=10,b=20,c=30
+print(a)
+print(b)
+print(c)
+
+# p,q,r,s,t = t1 # ERROR -> while unpcaking, values and varibales count must match\
+# x,y = t1       # ERROR -> while unpcaking, values and varibales count must match\
+
+
+
+
+SET:-
+
+#set example 
+data = {10,"hi",5.3,10} 
+#while creating a set you can add duplicate elemets but, 
+# after runnning a code, you will get only unique elements
+
+
+# ---------------- set properties -----------------
+# duplicate not allowed
+# hetrogeneous
+# in {}
+# mutable
+# indexing not allowed
+# insertaion order not preserved
+
+# ---------------- how to crerate a set -----------------
+# empty set
+set1 = {} #this is not set, this is dict (disctionry)
+print(set1)
+print(type(set1))
+
+#correct way of creating empty set use set() function
+set2 = set() #this is set,
+print(set2)
+print(type(set2))
+
+# form string to set using set(variable) function
+s1="hello"
+set3 = set(s1)
+print(set3)
+print(type(set3)) 
+
+
+# from range() to set()
+set3 = set(range(1,6))
+print(set3)
+print(type(set3))
+
+# if we know the elemets
+set4 = {10,23.6,10,25}
+print(set4)
+
+
+# operators on set
+set5 = {1,2,3}
+set6 = {11,22,33,3}
+
+# set7 = set5+set6   #ERROR 
+#print(set7) 
+
+#print(set5*3) 
+
+print(10 in set5)
+print(10 not in set5)
+
+# accessing set elements
+# we cant access set emlemets since indexing is not allowed
+set8 = {44,55,66,77,88,99}
+#print(set8[0]) ERROR since indexing is not allowed
+
+
+# operations on set
+# Basic
+print("----operations on set-----")
+set9 = {33,44,55,66,44}
+print(len(set9))
+# print(set9.count(44)) #ERROR
+
+# Adding elemets in set : we can add elemets in set but we cant tell their position
+print("----- Adding elemets in set ----")
+set10 = {1,2,3,4,5}
+set11 = {11,22,33,44,55}
+
+print(set10)
+set10.add(8)
+print(set10)
+
+set10.update("hihi")
+print(set10)
+
+set10.update([100,200])
+print(set10)
+
+set10.update((1000,2000))
+print(set10)
+
+set10.update(set11)
+print(set10)
+
+
+# removing elemets from set
+print("----- removing elemets from set ----")
+set12 = {11,22,33,44,55,66,77,88}
+print(set12)
+
+set12.pop() # pop() -> removes any elemet from set
+print(set12)
+
+set12.remove(22) #remove -> remove given element from set, if elemet not present, then it will gives erro. check below
+print(set12)
+#set12.remove(222) #ERROR coz, 222 is not in set
+set12.discard(222) #NO ERROR
+print("after discarding 222 from set12 : ",set12)
+
+set12.clear()  #removes all elemets 
+print(set12)
+
+
+
+
+
+# set comprehension -> creating a set. shortcut to create a set
+# print("---- set comprehension----------")
+# syntax : [ expression  for  condition]
+set13 = {10,25,36,45,86,26}
+print(set13)
+even_set = {num   for num in set13   if(num%2==0)}
+print(even_set)
+
+greater_than_40 = {num   for num in set13   if(num>40)}
+print(greater_than_40)
+
+
+#find number greater than 40 which are even from set13
+data = {num   for num in set13   if(num>40 and num%2==0)}
+print(data)
+
+
+# set operations
+
+set1 = {1,2,3}
+set2 = {3,4,5}
+
+#union : return common elemets after eleminating duplicates 
+print(set1.union(set2)) 
+
+#intersection : return common elemets from both sets\
+print(set1.intersection(set2))
+
+#difference : return unique elemets from left side set
+print(set1.difference(set2))
+
+
+#symmetric_difference : return unique elemets from both set
+print(set1.symmetric_difference(set2))
+
+
+#shallow VS deep copy
+mySet = {10,20,30}
+duplicate_set_mySet = mySet
+print(mySet)
+print(duplicate_set_mySet)
+
+duplicate_set_mySet.add(40)
+print(duplicate_set_mySet)
+print(mySet)
+print(duplicate_set_mySet is mySet)
+
+
+print("----- shallow copy --------")
+shallow_copy_mySet = mySet.copy()
+print(mySet)
+print(shallow_copy_mySet)
+shallow_copy_mySet.add(50)
+print("after adding 50")
+print(mySet)
+print(shallow_copy_mySet)
+
+
+FROZENSET:-
+
+
+# ---------------- frozenset properties -----------------
+# duplicate not allowed
+# hetrogeneous
+# in frozenset({})
+# immumutable
+# indexing not allowed
+# insertaion order not preserved
+
+set1 = {10,25,35,10,100}
+list1 = [100,250,350,100]
+print(set1)
+fs1 = frozenset(set1)
+fs2 = frozenset(list1)
+print(fs1)
+print(fs2)
+
+print(len(fs1))
+
+print(fs1.union(fs2))
+print(fs1.intersection(fs2))
+print(fs1.difference(fs2))
+print(fs1.symmetric_difference(fs2))
+print(fs1)
+
+# we cant perform any manipulation on frozenset since it is immutable
+
+
+DICTIONARY:-
+
+# to store data in key value pair - use dict
+marks = {"java":95,"python":96,"adjango":95}
+print(marks)
+#here "java" is key and 95 is value
+
+# ---------------- dict properties -----------------
+# duplicate key are not allowed, value can be duplicate
+# hetrogeneous
+# in {}
+# mutable
+# indexing not allowed, since we use key for manipuation
+# insertaion order preserved
+
+# ---------------- how to crerate a dict -----------------
+# empty dict
+dict1 = {}
+print(dict1)
+print(type(dict1))
+
+dict2 = dict()
+print(dict2)
+print(type(dict2))
+
+#if we know emelents
+marks = {"java":95,"python":96,"adjango":95}
+student = {1:"aniket",2:"raj"}
+print(marks)
+print(student)
+
+# by using list of tuple
+food=[("day1","veg"),("day2","non-veg"),("day3","jain food")]
+food_dic = dict(food)
+print(food_dic)
+
+# add,update,delete dict elements
+print("---adding elemets to dict -----")
+alphabates = {"a":"apple"}
+print(alphabates)
+alphabates['b'] = "banana"
+alphabates['c'] = "chiku"
+print(alphabates)
+
+print("---accessing elemets of dict -----")
+print(alphabates['a'])
+#print(alphabates['d']) #KEY ERROR
+
+print("---updating elemets of dict -----")
+print(alphabates)
+alphabates['a'] = "avacado" #since  "a" key is present, it will update apple to avacado
+print(alphabates)
+
+alphabates['d'] = "dragonfruit" #since  "d" key is not present, it will add new key value pair
+print(alphabates)
+
+print("---delete elemets of dict -----")
+del alphabates['a']
+print(alphabates)
+
+#del alphabates['e'] # KEYERROR
+
+# dict built in functions
+print("--- dict built in functions ----------")
+marks = {"java":95,"python":96,"adjango":95}
+
+print(len(marks))
+
+print(marks.get("java")) #95
+print(marks.get("angular")) #None
+
+print(marks.keys())
+
+print(marks.values())
+
+print(marks.items())
+
+print()
+marks.pop("java")
+print(marks)
+
+#marks.pop("angular") #KEY ERROR
+
+marks.popitem()
+print(marks)
+
+# {}.popitem() ERROR since dict is empty
+marks.setdefault("python",99) #if given key alredy present tyhen it will not update the key
+print(marks)
+
+marks.setdefault("spring",99)
+print(marks)
+
+# adding one dict into another
+d1 = {"p1":30,"p2":35}
+d2 = {"p3":40,"p5":45}
+# print(d1+d2) ERROR
+print(d1)
+d1.update(d2)
+print(d1)
+
+
+#what if dict has duplicate keys
+
+d  = {"java":95,"angular":98,"java":99}
+print(d.get("java"))
+
+
+

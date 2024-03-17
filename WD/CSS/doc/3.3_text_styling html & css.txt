@@ -1,0 +1,56 @@
+Text Styling:-
+
+HTML FILE:-
+
+<html>
+   <head>
+      <title>Text Styling</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> 
+      <link rel="stylesheet" href="text_styling.css">
+   </head>
+   <body>
+      <p id="my_name">Tejas Kasare</p>
+      <div id="box">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex animi fuga pariatur quibusdam dolor?</p>
+      </div>
+
+      <p id="spacing">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum suscipit, quod necessitatibus fugit, modi cupiditate sed reiciendis voluptas quidem porro ratione officiis nihil mollitia quo?</p>
+   </body>
+</html>
+
+CSS FILE:-
+
+#my_name
+{
+   font-family: 'Play', sans-serif;
+   font-size: 100px;
+   font-weight: bold;
+
+   
+
+color: red;
+   background-color: aquamarine;
+
+   text-align: center;
+   /* text-decoration: underline; */
+   text-transform: capitalize;
+   text-shadow: 3px 5px 5px grey;
+}
+
+#box
+{
+   height: 100px;
+   width: 200px;
+   border: 2px solid black;
+   text-align: justify;
+   padding: 10px;
+}
+
+#spacing{
+   word-spacing: 10px;
+   letter-spacing: 3px;
+   text-indent: 100px;
+   line-height: 2;
+}

@@ -1,0 +1,362 @@
+Use of Javascript:-
+
+html file:-
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Document</title>
+   </head>
+   <body>
+      <h1>Hello JS</h1>
+      <script>
+         console.log("Hello Javascript")
+      </script>
+      <script src="use_of_javascrpit.js"></script>
+   </body>
+</html>
+
+js file:-
+console.log("Hello from external Javascipt");
+
+Index:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+</head>
+<body>
+   <h1>Hello World</h1>
+   <script src="9_fetch_api.js"></script>
+</body>
+</html>
+
+
+Variables:-
+
+//scope
+{
+   var a = 10;
+   let b = 20;
+   const c = 30;
+}
+console.log(a);
+//console.log(b); ERROR
+//console.log(c); ERROR
+
+//updation
+var d = 10;
+console.log("d = ", d);
+let e = 20;
+console.log("e = ", e);
+const f = 30;
+console.log("f = ", f);
+
+d = 40;
+console.log("d = ", d);
+e = 50;
+console.log("e = ", e);
+//f = 60; ERROR
+
+
+// re declaration
+var g = 10;
+var g = "hello"
+
+let h = 40;
+//let h = "hello" ERROR due to redeclaration
+
+const i = 50;
+//const i = 60; ERROR due to redeclaration
+
+
+Datatype:-
+
+let a = 10;
+console.log(a);
+console.log(typeof(a));
+
+let b = 10.55;
+console.log(b);
+console.log(typeof(b));
+
+let c = 'javascript';
+console.log(c);
+console.log(typeof(c));
+
+let d = "html";
+console.log(d);
+console.log(typeof(d));
+
+let username ="rani"
+let marks = 96
+let e = `hello ${username}, you have scored ${marks}`
+console.log(e);
+console.log(typeof(e));
+
+let f;
+console.log(f);
+console.log(typeof(f));
+
+let g=null;
+console.log(g);
+console.log(typeof(g));
+
+let arr=[40,40.3,"hello"];
+console.log(arr);
+console.log(typeof(arr));
+console.log(arr[0]);
+console.log(arr[5]);
+
+let obj = {sql:95,py:99}
+console.log(obj);
+console.log(typeof(obj));
+console.log(obj.sql);
+console.log(obj.html);
+
+let i = true
+console.log(i);
+console.log(typeof(i));
+
+Operators:-
+
+// arithamtic
+console.log(10+2);
+console.log(10-2);
+console.log(10*2);
+console.log(10/2);
+console.log(10.0/2);
+console.log(10/3);
+console.log(10**2);
+console.log(10%2);
+
+//pre and post increament
+//pre ++x: first do increment then print
+//post x++ - first print and do increment for next use
+let x = 10
+console.log(++x);
+console.log(x);
+
+let y = 20
+console.log(y++);
+console.log(y);
+
+let a = 10
+console.log(--a);
+console.log(a);
+
+let b = 20
+console.log(b--);
+console.log(b);
+
+//assignment
+let c = 30
+console.log(c);
+
+c = c + 5 //30+5
+console.log(c);
+
+c +=5 //c = c + 5 => c = 35+5
+console.log(c);
+
+c-=10
+console.log(c);
+
+//comparision 
+console.log(10>5);
+console.log(10<5);
+console.log(10>=10);
+console.log(10<=10);
+console.log(10!=12);
+console.log(10==10);
+// == is used for only data comparision
+// for == data type doenst matter
+console.log(5=="5");
+//=== is used for both datatype and data comparision
+console.log(5==="5");
+
+//ternary
+//condition?msg if condition is true:msg if condition is false
+console.log(10>50?"yes it is":"no it in not");
+
+//Logical
+// &&,||, !
+console.log(10>5 && 10>6);
+console.log(10<5 && 10>6);
+console.log(10>5 && 10<6);
+console.log(10<5 && 10<6);
+
+console.log(10>5 || 10>6);
+console.log(10<5 || 10>6);
+console.log(10>5 || 10<6);
+console.log(10<5 || 10<6);
+
+console.log(!10>5);
+console.log(!10<5);
+
+
+Conditional Statement:-
+
+//to check number is even
+let x = 10;
+//if block get execute when codition is true
+if(x%2==0)
+   {
+     console.log(x, " is even"); 
+   }
+
+//to check number is even or odd
+let y = 35;
+if(y%2==0)
+   {
+      console.log(y,"is even");
+   }
+else //else get execute when condition in if is false
+   {
+      console.log(y,"is odd");
+   }
+
+// checking for multiple condition
+// to check number is +ve or -ve or zero
+let z = 85
+if(z>0)
+   {
+      console.log(z, "is +ve");
+   }
+else if(z<0)
+   {
+      console.log(z, "is -ve");
+   }
+else
+   {
+      console.log(z, "is zero");
+   }
+
+Loops:-
+
+//display 1 - 5 numbers
+//every loop we nedd following 3 things :
+// initialization - condition - inc/dec
+
+//for(initialization;condition;inc/dec){}
+for(let x=1; x<=5; x++)
+   {
+      console.log(x);
+   }
+
+//display 1-5 using while loop
+//while(condition){}
+console.log("using while loop");
+let a = 1; //intialzation
+while(a<=5) //condition
+   {
+      console.log(a);
+      a++;
+   }
+
+//do while
+do
+   {
+      console.log("I am True");
+   }
+while(0>100);
+
+
+Transfer Statement:-
+
+console.log("------continue---------");
+
+prices=[199,299,99,399,199,99,299,399]
+console.log(prices.length);
+for(let i=0;i<prices.length;i++)
+   {
+      if(prices[i]==99) //199==99 //299==99 //99==99
+      {
+         continue //towards the loop
+      }
+      else
+      {
+         console.log(prices[i]);
+      }
+   }
+
+console.log("------break---------");
+
+   for(let i=0;i<prices.length;i++)
+   {
+      if(prices[i]==99) //199==99 //299==99 //99==99
+      {
+         break; //out of the loop
+      }
+      else
+      {
+         console.log(prices[i]);
+      }
+   }
+
+console.log("hello js");
+
+
+Function:-
+
+//named function
+function add(x,y)
+{
+   result = x+y //10+20
+   console.log(result);
+}
+
+add(10,20) //x=10,y=20
+add(1,20) //x=1,y=20
+add(10,2) //x=10,y=2
+
+//anonymous
+const sub =function (p,q) 
+               {
+                  result = p-q 
+                  console.log(result);
+               }
+sub(10,2) //p=10, q=2
+
+
+//arrow function
+const div =(a,b)=>
+   {
+      result = a/b 
+      console.log(result);
+   }
+div(10,2)
+div(1510,3)
+
+
+Fetch api:-
+
+fetch("https://api.github.com/users")
+.then((data)=>
+            {
+               data.json()
+               .then(users => 
+                  {
+                     //console.log(users[0].login)
+                     for(let i=0;i<users.length;i++)
+                     {
+                        console.log(users[i].login)
+                     }
+                  })
+               .catch()
+
+            })
+.catch((err)=>{console.log(err);})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
